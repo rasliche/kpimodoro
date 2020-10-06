@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex justify-between">
-            <input type="text" v-model="text">
-            <input type="number" v-model="time">
+        <p>{{ text }}</p>
+        <p>{{ time }}</p>
     </div>
 </template>
 
@@ -12,5 +12,10 @@ export default {
         text: { default: 'TODO' },
         time: { default: 25 }
     },
+    data() {
+        return {
+            editing: false
+        }
+    }
 }
 </script>
