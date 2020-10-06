@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <TaskList>
-      <Task v-for="task in ['one', 'two', 'three']" :key="task" :text="task"/>
+      <Task v-for="task in tasks" :key="task" :text="task"/>
     </TaskList>
     <div>
       <h1 class="title">
@@ -13,7 +13,24 @@
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  head() {
+    return { 
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Keep track of tasks you care about.'
+        }
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['tasks'])
+  }
+}
 </script>
 
 <style>
