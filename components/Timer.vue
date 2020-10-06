@@ -52,24 +52,22 @@ export default {
             )
         },
         runTimer() {
-            if (!this.timerInterval) {
-                this.timerInterval = setInterval(() => {
-                        this.isRunning = true
-                    if (this.timeRemaining > 0) {
-                        this.timeRemaining--
-                    } else {
-                        clearInterval(this.timerInterval)
-                        this.isRunning = false
-                        this.timeRemaining = this.focusTime
-                    }
-                }, 1000)
-            }
+            this.timerInterval = setInterval(() => {
+                    this.isRunning = true
+                if (this.timeRemaining > 0) {
+                    this.timeRemaining--
+                } else {
+                    clearInterval(this.timerInterval)
+                    this.isRunning = false
+                    this.timeRemaining = this.focusTime
+                }
+            }, 1000)
         },
         pauseTimer() {
             console.log('in the pause')
-            if (this.running) {
+            if (this.isRunning) {
                 console.log('paused')
-                this.running = !this.running
+                this.isRunning = !this.isRunning
                 clearInterval(this.timerInterval)
             }
         }
