@@ -1,29 +1,13 @@
 <template>
   <div class="container">
+    <TaskList>
+      <Task v-for="task in ['one', 'two', 'three']" :key="task" :text="task"/>
+    </TaskList>
     <div>
-      <Logo />
       <h1 class="title">
         kpimodoro
       </h1>
       <Timer />
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>

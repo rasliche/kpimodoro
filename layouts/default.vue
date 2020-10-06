@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Nuxt />
+    <Nuxt class="min-h-screen" />
+    <footer>
+      <nuxt-link to="/roadmap">roadmap</nuxt-link>
+      <nuxt-link to="/">get work done</nuxt-link>
+    </footer>
   </div>
 </template>
 
