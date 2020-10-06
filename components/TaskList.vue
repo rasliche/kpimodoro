@@ -4,6 +4,10 @@
       <div class="space-y-4">
         <slot></slot>
       </div>
+      <div>
+        <input type="text" name="task" id="task">
+        <button @click="addTask">Add</button>
+      </div>
   </div>
 </template>
 
