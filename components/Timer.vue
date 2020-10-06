@@ -4,6 +4,7 @@
           {{ displayTime }}
       </span>
       <button @click="toggle">{{ !isRunning ? "Start" : "Pause" }}</button>
+      <button @click="reset">Reset</button>
   </div>
 </template>
 
@@ -52,6 +53,7 @@ export default {
             )
         },
         runTimer() {
+            console.log('Timer started.')
             this.timerInterval = setInterval(() => {
                     this.isRunning = true
                 if (this.timeRemaining > 0) {
@@ -63,8 +65,13 @@ export default {
                 }
             }, 1000)
         },
+        reset() {
+            console.log('Timer reset.')
+            this.pauseTimer()
+            
+        },
         pauseTimer() {
-            console.log('in the pause')
+            console.log('Timer paused.')
             if (this.isRunning) {
                 console.log('paused')
                 this.isRunning = !this.isRunning
