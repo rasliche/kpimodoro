@@ -1,9 +1,9 @@
 export const state = () => ({ 
-    tasks: []
+    tasks: ['one', 'two', 'three']
 })
   
-  export const mutations = {
-    increment(state) {
-      state.counter++
-    }
+export const mutations = {
+  addTask(state, task) {
+    state.push(task)
   }
+}
