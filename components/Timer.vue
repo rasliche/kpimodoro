@@ -1,17 +1,38 @@
 <template>
   <div>
-      <span>
+      <span class="text-6xl">
           {{ displayTime }}
       </span>
-      <button @click="runTimer">Start</button>
+      <button @click="toggle">{{ !isRunning ? "Start" : "Pause" }}</button>
   </div>
 </template>
 
 <script>
+const machine = {
+    initialState: 'paused',
+    paused: {
+
+    },
+    focus: {
+
+    },
+    shortBreak: {
+
+    },
+    longBreak: {
+        
+    }
+}
+
 export default {
     data() {
         return {
-            timeRemaining: 25 * 60
+            focusTime: 25 * 60,
+            shortBreakTime: 5 * 60,
+            longBreakTime: 20 * 60,
+            timeRemaining: 25 * 60,
+            isRunning: false,
+            mode: 'focus'
         }
     },
     computed: {
@@ -22,10 +43,35 @@ export default {
         }
     },
     methods: {
+        toggle() {
+            if (this.isRunning) {
+                console.log('toggled')
+                this.pauseTimer()
+            } else (
+                this.runTimer()
+            )
+        },
         runTimer() {
-            this.timerInterval = setInterval(() => {
-                this.timeRemaining--
-            }, 1000)
+            if (!this.timerInterval) {
+                this.timerInterval = setInterval(() => {
+                        this.isRunning = true
+                    if (this.timeRemaining > 0) {
+                        this.timeRemaining--
+                    } else {
+                        clearInterval(this.timerInterval)
+                        this.isRunning = false
+                        this.timeRemaining = this.focusTime
+                    }
+                }, 1000)
+            }
+        },
+        pauseTimer() {
+            console.log('in the pause')
+            if (this.running) {
+                console.log('paused')
+                this.running = !this.running
+                clearInterval(this.timerInterval)
+            }
         }
     }
 }
