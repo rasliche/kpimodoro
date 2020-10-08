@@ -68,6 +68,7 @@ export default {
         reset() {
             console.log('Timer reset.')
             this.pauseTimer()
+            this.timeRemaining = this.focusTime
             
         },
         pauseTimer() {
