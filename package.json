@@ -1,28 +1,25 @@
 {
   "name": "kpimodoro",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "start": "nuxt start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasliche/kpimodoro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasliche/kpimodoro/issues"
+  },
+  "homepage": "https://github.com/rasliche/kpimodoro#readme",
   "dependencies": {
-    "@nuxt/content": "^1.10.0",
-    "@nuxtjs/axios": "^5.12.2",
-    "@nuxtjs/pwa": "^3.2.2",
-    "@tailwindcss/typography": "^0.2.0",
-    "core-js": "^3.6.5",
-    "nuxt": "^2.14.7"
-  },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^3.0.2",
-    "@vue/test-utils": "^1.1.0",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^26.3.0",
-    "jest": "^26.5.0",
-    "vue-jest": "^3.0.4"
+    "nuxt": "^2.15.3"
   }
 }
